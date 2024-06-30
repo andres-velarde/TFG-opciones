@@ -8,7 +8,7 @@ Una lista de códigos que se han empleado para realizar este trabajo:
 
     - script_espectral: Código que calcula y grafica el radio espectral de las martrices A_j asociadas al método explícito para cada t_j
 
-    - autovaloreS: función que calcula los autovalores de una matriz
+    - autovalores: función que calcula los autovalores de las matrices A_j y B^{-1}_j
 
     - script_espectral_b: Código que calcula y grafica el radio espectral de las martrices B^{-1}_j asociadas al método implícito para cada t_j
 

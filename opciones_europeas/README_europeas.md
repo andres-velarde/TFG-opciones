@@ -10,3 +10,4 @@ Para cada tipo de opciones, Put y Call, pueden encontrarse:
       (precio_ecplicito_put y precio_explicito_call), el implicito (precio_implicito_put y precio_implicito_call) y el de Crank-Nicolson (precio_cn_put y 
       precio_cn_call)
     
+Finalmente, se incluye también

@@ -10,4 +10,4 @@ Para cada tipo de opciones, Put y Call, pueden encontrarse:
       (precio_ecplicito_put y precio_explicito_call), el implicito (precio_implicito_put y precio_implicito_call) y el de Crank-Nicolson (precio_cn_put y 
       precio_cn_call)
     
-Finalmente, se incluye también
+Finalmente, se incluye también el algoritmo de Thomas para matrices tridiagonales utilizado en tridiagonal_matrix de 22/10/2022 (Copyright © 2021 Tamas Kis, https://tamaskis.github.io)

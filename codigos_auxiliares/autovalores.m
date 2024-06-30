@@ -1,4 +1,15 @@
 function [v_a, v_b] = autovalores(T, N, M, r, q, sigma)
+    % T: Tiempo hasta la madurez (en años)
+    % N: Número de puntos en la partición del eje S
+    % M: Número de puntos en la partición del eje del tiempo
+    % r: Tasa libre de riesgo (en función del tiempo)
+    % q: Rendimiento de los dividendos (en función del tiempo)
+    % sigma: Volatilidad (en función del tiempo)
+    
+    % OUTPUT: dos vectores de M+1 componentes que contienen 
+    % radio espectral de A_j y radio espectral de B^{-1}_j para cada j
+    %----------------------------------------------------------------------
+        
     % Paso temporal
     dt = T / M;
     
@@ -27,11 +38,12 @@ function [v_a, v_b] = autovalores(T, N, M, r, q, sigma)
         beta = dt * ((vector_i .* sigma_val).^2 + r_val);
         alpha = 0.5 * dt * ((vector_i .* sigma_val).^2 - (r_val - q_val) .* vector_i);
         
-        % Matriz A y sus valores propios
+        % Matriz A_j y sus valores propios
         A = diag(1 - beta) + diag(alpha(2:end), -1) + diag(gamma(1:end-1), 1);
         eigenvalues_A = eig(A);
         autovalores_a(j) = max(abs(eigenvalues_A));
         
+        % Matriz B^{-1}_j y sus valores propios
         B = diag(1 + beta) - diag(alpha(2:end), -1) - diag(gamma(1:end-1), 1);
         B_inv = inv(B);
         eigenvalues_B_inv = eig(B_inv);
